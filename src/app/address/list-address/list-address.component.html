@@ -1,0 +1,49 @@
+<div class="container">
+
+    <div class="card-stacked" *ngIf="addressList">
+        <div class="card-content">
+          <table class="bordered striped ">
+            <tbody class="card-content">
+              
+              <tr>
+                
+                <td><button type="button" (click)="searche()">search</button><input  [(ngModel)]="name" name=".email" ></td>
+              </tr>
+              
+             
+             
+            </tbody>
+          </table>
+    <div class="row">
+        <div *ngFor="let address of  addressList" class="col m6 s12">
+            <div (click)="gotoPokemon(address)" class="card horizontal hoverable" appBordeCard="red" >
+            
+                
+                <div class="card-stacked">
+                    <div class="card-content">
+                      <table class="bordered striped ">
+                        <tbody class="card-content">
+                          
+                          <tr>
+                            <td>Last name</td>
+                            <td><strong>{{ address.last_name }}</strong></td>
+                          </tr>
+                          <tr>
+                            <td>Telephon</td>
+                            <td><strong>{{ address.telephon }}</strong></td>
+                          </tr>
+                          <tr>
+                            <td>Email</td>
+                            <td><strong>{{ address.email }}</strong></td>
+                          </tr>
+                         
+                         
+                        </tbody>
+                      </table>
+           </div>
+          
+        </div>
+
+    </div>
+    
+    <a class="btn-floating btn-large waves-effect waves-light red z-depth-2" style="position: fixed;bottom:25px;right:25px" routerLink="/pokemon/add">Ajouter un pokemon</a>

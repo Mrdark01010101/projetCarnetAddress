@@ -1,0 +1,61 @@
+<h1 class="center">Edite {{pokemon.last_name}}</h1>
+
+    
+
+    <form *ngIf="pokemon" (ngSubmit)="setUpdate(pokemon)" #pokemonForm="ngForm">
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div class="card-panel">
+      
+              
+              <!-- Pokemon name -->
+              <div class="form-group">
+                <label for="name">Last Name</label>
+                <input type="text" class="form-control" id="name" required 
+                  [(ngModel)]="pokemon.last_name" name="last_Name">
+      
+                
+              </div>
+               <!-- Pokemon name -->
+               <div class="form-group">
+                <label for="name">Email</label>
+                <input type="text" class="form-control" id="name" required
+                  [(ngModel)]="pokemon.email" name=".email" >
+      
+                
+              </div>
+              <!-- Pokemon name -->
+              <div class="form-group">
+                <label for="name">Telephon</label>
+                <input type="text" class="form-control" id="telephon" required 
+                  [(ngModel)]="pokemon.telephon" name="telephon" >
+      
+                
+              </div>
+              
+              <!-- Pokemon picture -->
+              <!-- <div *ngIf="isAddForm" class="form-group imge">
+                <label for="name">Nom</label>
+                <input (change)="choisImage($event)" type="file" class="form-control" id="picture" required 
+                  [(ngModel)]="pokemon.picture" name="picture" #picture="ngModel" >
+                   
+      
+                
+              </div> -->
+      
+            
+      
+              
+      
+              <!-- Submit button -->
+              <div class="divider"></div>
+              <div class="section center">
+                <button type="submit" class="waves-effect waves-light btn" [disabled]="!pokemonForm.form.valid">
+                  Valider</button>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </form>
+      <h3 *ngIf="!pokemon" class="center">Aucun pokémon à éditer...</h3>

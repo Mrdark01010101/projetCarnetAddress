@@ -1,0 +1,43 @@
+
+<div *ngIf="address" class="row">
+  <div class="col s12 m8 offset-m2">
+  <h2 class="header center">{{ address.first_name }}</h2>
+  <div class="card horizontal hoverable">
+    <div class="card-image">
+      <img [src]="address.picture" alt="">       
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <table class="bordered striped ">
+          <tbody class="card-content">
+            
+            <tr>
+              <td>Last name</td>
+              <td><strong>{{ address.last_name }}</strong></td>
+            </tr>
+            <tr>
+              <td>Telephon</td>
+              <td><strong>{{ address.telephon }}</strong></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><strong>{{ address.email }}</strong></td>
+            </tr>
+           
+           
+          </tbody>
+        </table>
+      </div>
+      <div class="card-action">
+        <a (click)="gotoPokemonList()">Retour</a>
+        <a (click)="gotoEditPokemon(address)">Edite</a>
+        <a (click)="deletePokemon(address.id)">Delete</a>
+
+        
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <h4 *ngIf='!address' class="center">Aucun pokémon à afficher !</h4>
